@@ -6,7 +6,7 @@
 #    By: mgessa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/11/22 18:07:11 by mgessa           ###   ########.fr        #
+#    Updated: 2018/11/22 18:30:12 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,9 @@ all: libft $(NAME)
 libft:
 	(cd libft; make all)
 
+re-libft:
+	cd libft && make re
+
 $(NAME): $(OBJS)
 	gcc $(FLAGS) -o $(NAME) $^ -L. libft/libft.a
 
@@ -41,7 +44,6 @@ fclean: clean
 	/bin/rm -f $(NAME)
 	cd libft && make fclean
 
-re: fclean all
-	cd libft && make fclean
+re: fclean re-libft all
 
 .PHONY: all clean re fclean libft
