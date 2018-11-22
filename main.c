@@ -6,15 +6,32 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:46:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/22 18:07:28 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/22 21:13:48 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
+static void		ft_init(char *file)
+{
+	t_map	*map;
+
+	map = NULL;
+	if(!(map = parse_map(file)))
+	{
+		ft_putstr_fd("error\n", 1);
+		return ;
+	}
+}
+
 int		main(int argc, char **argv)
 {
-	(void)argc;
-	ft_putstr("Hello\n");	
-	ft_putstr(argv[0]);
+	if (argc == 2)
+	{
+		ft_init(argv[1]);
+	}
+	else
+	{
+		ft_putstr_fd("Usage: <file>\n", 1);
+	}
 }
