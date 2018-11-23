@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/23 19:16:42 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/23 19:59:04 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define FILLIT_H
 
 # include "libft.h"
-# include "stdlib.h"
+# include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
 
 typedef	struct	s_block
 {
