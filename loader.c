@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:57:06 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/23 20:43:15 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/23 21:21:23 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char			*ft_loadf(const char *file)
 		buff[ret] = '\0';
 		if (!(str = str_realloc(str, buff)))
 			return (NULL);
-		if (ft_strlen(str) > 20 * 24 + 23)
+		if (ft_strlen(str) > 20 * 26 + 25)
 		{
 			free(str);
 			ft_putstr("Too many lines in this file?? wtf\n");

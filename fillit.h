@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/23 19:59:04 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/23 21:20:32 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
+
+# include <stdio.h>
 
 typedef	struct	s_block
 {
@@ -38,6 +40,7 @@ typedef struct  s_map
 	int			nb_pcs;
 }               t_map;
 
+int			ft_checkf(char *str);
 char		*ft_loadf(const char *file);
 t_map       *parse_map(char *file);
 
