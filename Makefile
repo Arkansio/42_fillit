@@ -6,13 +6,15 @@
 #    By: mgessa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/11/22 18:30:12 by mgessa           ###   ########.fr        #
+#    Updated: 2018/11/23 17:58:47 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 
-SRCS = main.c
+SRCS = main.c \
+	   parser.c \
+	   loader.c
 
 FLAGS = -Wall \
 		-Werror \

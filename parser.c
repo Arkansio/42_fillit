@@ -6,14 +6,32 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 20:11:54 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/22 21:15:10 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/23 19:49:54 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-t_map		*parse_map(char *name_file)
+static int			load_tetriminos(t_map *map, char *file)
 {
+	char	*str;
 
-	return (NULL);
+	if(!(str = ft_loadf(file)))
+		return (0);
+	ft_putstr(str);
+	return (1);
+}
+
+t_map				*parse_map(char *file)
+{
+	t_map	*map;
+
+	if (!(map = (t_map*)malloc(sizeof(t_map))))
+		return (NULL);
+	if (load_tetriminos(map, file) == -1)
+	{
+		free(map);
+		return (NULL);
+	}
+	return (map);
 }
