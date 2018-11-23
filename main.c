@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:46:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/23 18:17:34 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/23 20:10:08 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ static void		ft_init(char *file)
 int		main(int argc, char **argv)
 {
 	if (argc == 2)
-	{
 		ft_init(argv[1]);
-	}
 	else
-	{
 		ft_putstr_fd("Usage: <file>\n", 1);
-	}
 }

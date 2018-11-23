@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:57:06 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/23 20:02:55 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/23 20:15:35 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ static char		*str_realloc(char *str, char *buff)
 {
     char    *tmp;
 
-    if (!str)
-	        return (NULL);
     if (!(tmp = ft_strjoin(str, buff)))
 	        return (NULL);
     if (str)
@@ -33,14 +31,15 @@ char		*ft_loadf(const char *file)
 	char	*str;
 
 	fd = open(file, 0x000);
-	if (fd == -1)
+	if (fd < 0)
 		return (NULL);
 	if(!(str = ft_strnew(1)))
 		return (NULL);
 	while ((ret = read(fd, buff, 20 + 1)) > 0)
 	{
 		buff[ret] = '\0';
-		str = str_realloc(str, buff);
+		if(!(str = str_realloc(str, buff)))
+			return (NULL);
 		if (ft_strlen(str) > 20 * 24 + 23)
 		{
 			free(str);

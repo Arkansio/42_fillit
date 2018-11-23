@@ -3,3 +3,5 @@ libft/ibft.a
 main.c
 *.o
 *.out
+*.fillit
+fillit
