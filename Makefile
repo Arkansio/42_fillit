@@ -6,7 +6,7 @@
 #    By: mgessa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/11/23 23:11:19 by mgessa           ###   ########.fr        #
+#    Updated: 2018/11/24 02:03:21 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRCS = main.c \
 	   parser.c \
 	   loader.c \
 	   ft_checkf_sz.c \
-	   ft_checkf_tet.c
+	   ft_checkf_tet.c \
+	   ft_checkf_tside.c
 
 FLAGS = -Wall \
 		-Werror \

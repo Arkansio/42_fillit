@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 23:11:54 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/24 01:47:50 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/24 02:31:50 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ static int	check_tetri(char *str)
 		i++;
 	}
 	if (total_b != 4)
+		return (-1);
+	if (ft_checkf_tside(str) == -1)
 		return (-1);
 	return (1);
 }

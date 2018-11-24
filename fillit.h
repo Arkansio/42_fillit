@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/24 01:20:27 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/24 02:26:30 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct  s_map
 	int			nb_pcs;
 }               t_map;
 
+int			ft_checkf_tside(char *str);
 int			ft_checkf_tet(char *str);
 int			ft_checkf_sz(char *str);
 char		*ft_loadf(const char *file);
