@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 21:18:57 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/23 21:57:35 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/24 00:19:30 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int      check_size(char *str)
 			return (1);
 		i++;
 	}
-	return (0);
+	return (-1);
 }
 
 static int		check_size2(char *str)
@@ -41,20 +41,20 @@ static int		check_size2(char *str)
 			return (1);
 		i++;
 	}
-	return (0);
+	return (-1);
 }
 
 int		ft_checkf_sz(char *str)
 {
-	if (!(check_size(str)))
+	if (check_size(str) == -1)
 	{
 		free(str);
-		return (0);
+		return (-1);
 	}
-	if (!(check_size2(str)))
+	if (check_size2(str) == -1)
 	{
 		free(str);
-		return (0);
+		return (-1);
 	}
 	return (1);
 }
