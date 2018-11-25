@@ -6,13 +6,11 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:46:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/25 16:36:05 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/25 18:54:40 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-#include <time.h>
 
 static void		ft_init(char *file)
 {
@@ -37,5 +35,5 @@ int		main(int argc, char **argv)
 
 	clock_t end = clock();
 	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-	printf("Time spent: %fs\n", time_spent);
+	printf("total time: %fs\n", time_spent);
 }

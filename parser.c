@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 20:11:54 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/24 00:13:25 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/25 19:03:36 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int			load_tetriminos(t_map *map, char *file)
 	if (ft_checkf_tet(str) == -1)
 		return (-1);
 	(void)map;
-	ft_putstr(str);
+//	ft_putstr(str);
 	return (1);
 }
 
