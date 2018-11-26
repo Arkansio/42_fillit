@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/25 18:54:57 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/26 21:57:55 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,13 @@ typedef struct	s_tetris
 typedef struct  s_map
 {
 	int         **map;
-	t_tetris    *t_pcs;
+	t_tetris    **t_pcs;
 	int			nb_pcs;
 }               t_map;
 
+int			ft_load_tet(char *str, t_map *map);
 int			ft_checkf_tside(char *str);
-int			ft_checkf_tet(char *str);
+int			ft_checkf_tet(char *str, t_map *map);
 int			ft_checkf_sz(char *str);
 char		*ft_loadf(const char *file);
 t_map       *parse_map(char *file);
