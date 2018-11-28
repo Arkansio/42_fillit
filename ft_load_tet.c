@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_load_tetmap.c                                   :+:      :+:    :+:   */
+/*   ft_load_tet.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 21:25:15 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/27 18:21:57 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/28 19:12:29 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ static t_tetris		*get_tet(char *str)
 
 	if (!(tet = (t_tetris*)malloc(sizeof(t_tetris))))
 		return (NULL);
-	ft_load_tetmap(str, map);
+	if(!(ft_load_tetmap(str, map)))
+		return (NULL);
+	ft_load_blocks(tet, map);
 	return (tet);
 }
 

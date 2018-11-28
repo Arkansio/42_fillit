@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_tetri_map.c                                   :+:      :+:    :+:   */
+/*   ft_load_blocks.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 17:53:34 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/28 17:29:35 by mgessa           ###   ########.fr       */
+/*   Created: 2018/11/28 18:54:31 by mgessa            #+#    #+#             */
+/*   Updated: 2018/11/28 23:42:46 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int			ft_load_tetmap(char *str, int map[4][4])
+int			ft_load_blocks(t_tetris *tet, int tab[4][4])
 {
-	int     i;
-	int     j;
+	int		i;
+	int		is_relative;
+	int		j;
+	int		y;
+	int		x;
 
+	j = 1;
 	i = 0;
-	while (i < 4)
+	is_relative = 0;
+	while (i < 16)
 	{
-		j = 0;
-		while (j < 4)
+		if (is_relative == 0 && tab[i / 4][i % 4] == 1)
 		{
-			if (str[i * 5 + j] == '#')
-				map[i][j] = 1;
-			else if (str[i * 5 + j] == '.')
-				map[i][j] = 0;
-			else
-				return (-1);
+			tet->blocks[0].y = 0;
+			tet->blocks[0].x = 0;
+			y = i / 4;
+			x = i % 4;
+			is_relative = 1;
+		}
+		else if (tab[i / 4][i % 4] == 1)
+		{
+			tet->blocks[j].y = i / 4 - y;
+			tet->blocks[j].x = i % 4 - x;
 			j++;
 		}
 		i++;
