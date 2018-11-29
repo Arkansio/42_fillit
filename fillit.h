@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/28 18:57:01 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/29 00:51:35 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ typedef struct  s_map
 	int			nb_pcs;
 }               t_map;
 
+int			ft_perfect_square(int nb);
+int			ft_resolve(t_map *map);
 int			ft_load_blocks(t_tetris *tet, int tab[4][4]);
 int			ft_load_tetmap(char *str, int map[4][4]);
 int			ft_load_tet(char *str, t_map *map);

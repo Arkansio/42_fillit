@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:46:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/25 18:54:40 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/28 23:46:05 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void		ft_init(char *file)
 		ft_putstr_fd("error\n", 1);
 		return ;
 	}
+	ft_resolve(map);
 }
 
 int		main(int argc, char **argv)
