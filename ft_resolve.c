@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 23:48:36 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/30 23:48:58 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 23:57:19 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,36 +72,30 @@ int				is_available(t_map *map)
 	return (0);
 }
 
-int				ft_solve(t_map *map, int **tab, int sz)
+int				ft_solve(t_map *map, int **tab, int sz, int i)
 {
-	int		i;
 	int		x;
 	int		cords[2];
 
-	i = 0;
+	i = -1;
 	if (is_available(map) == 0)
 		return (1);
-	while (i < map->nb_pcs)
+	while (++i < map->nb_pcs)
 	{
-		x = 0;
-		while (x < sz * sz && map->t_pcs[i]->used == 0)
+		x = -1;
+		while (++x < sz * sz && map->t_pcs[i]->used == 0)
 		{
 			cords[0] = x / sz;
 			cords[1] = x % sz;
 			if (can_place(map->t_pcs[i], map, cords, i + 1) == 1)
 			{
 				map->t_pcs[i]->used = 1;
-				if (ft_solve(map, tab, sz) == 1)
+				if (ft_solve(map, tab, sz, 0) == 1)
 					return (1);
-				else
-				{
-					remove_bl(map->t_pcs[i], map, cords, 4);
-					map->t_pcs[i]->used = 0;
-				}
+				remove_bl(map->t_pcs[i], map, cords, 4);
+				map->t_pcs[i]->used = 0;
 			}
-			++x;
 		}
-		++i;
 	}
 	return (0);
 }
@@ -120,7 +114,7 @@ int				ft_resolve(t_map *map)
 			return (-1);
 		map->sz = size;
 		map->map = tab;
-		result = ft_solve(map, tab, size);
+		result = ft_solve(map, tab, size, 0);
 		if (result == 0)
 			++size;
 		if (tab)
