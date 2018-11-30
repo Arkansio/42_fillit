@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_load_tet.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 21:25:15 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/28 19:12:29 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/29 22:43:37 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int					ft_load_tet(char *str, t_map *map)
 	{
 		if(!(map->t_pcs[i] = get_tet(&str[i * 21])))
 			return (-1);
+		map->t_pcs[i]->used = 0;
 		i++;
 	}
 	return (1);

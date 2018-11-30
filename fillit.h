@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/29 00:51:35 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 00:58:35 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ typedef	struct	s_block
 typedef struct	s_tetris
 {
 	t_block		blocks[4];
-	int			width;
-	int			height;
+	int			used;
 }				t_tetris;
 
 typedef struct  s_map
@@ -39,6 +38,7 @@ typedef struct  s_map
 	int         **map;
 	t_tetris    **t_pcs;
 	int			nb_pcs;
+	int			sz;
 }               t_map;
 
 int			ft_perfect_square(int nb);
