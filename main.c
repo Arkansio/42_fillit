@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:46:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/28 23:46:05 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 18:52:47 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ static void		ft_init(char *file)
 
 int		main(int argc, char **argv)
 {
-	clock_t begin = clock();
+//	clock_t begin = clock();
 
 	if (argc == 2)
 		ft_init(argv[1]);
 	else
 		ft_putstr_fd("Usage: <file>\n", 1);
 
-	clock_t end = clock();
-	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-	printf("total time: %fs\n", time_spent);
+//	clock_t end = clock();
+//	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+//	printf("total time: %fs\n", time_spent);
 }

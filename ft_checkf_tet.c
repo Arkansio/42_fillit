@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checkf_tet.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 23:11:54 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/26 22:19:04 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 18:53:16 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ int			ft_checkf_tet(char *str, t_map *map)
 		i += 21;
 	}
 	map->nb_pcs = pcs;
-	printf("pcs: %d\n", pcs);
+//	printf("pcs: %d\n", pcs);
 	return (1);
 }

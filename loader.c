@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   loader.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:57:06 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/23 21:21:23 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 18:52:19 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ char			*ft_loadf(const char *file)
 		if (ft_strlen(str) > 20 * 26 + 25)
 		{
 			free(str);
-			ft_putstr("Too many lines in this file?? wtf\n");
 			return (NULL);
 		}
 	}

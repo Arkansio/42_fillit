@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 23:48:36 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/30 01:53:52 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 23:06:29 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ static int         **create_array(int sz)
 	return (tab);
 }
 
-void		show_tab(t_map *map, int size, int **tab)
+void		show_tab(int size, int **tab)
 {
 		int		i = 0;
-    printf("nb blocks: %d\n", map->nb_pcs);
-    printf("%d\n", size);
+ //   printf("nb blocks: %d\n", map->nb_pcs);
+ //   printf("%d\n", size);
 	while (i < size * size)
 	{
 		if (tab[i / size][i % size] == 0)
@@ -47,7 +47,7 @@ void		show_tab(t_map *map, int size, int **tab)
 			ft_putchar('A' + tab[i / size][i % size] - 1);
 		i++;
 		if (i % size == 0)
-			printf("\n");
+			ft_putchar('\n');
 	}
 }
 
@@ -63,7 +63,7 @@ int			remove_bl(t_tetris *tet, t_map *map, int cords[2], int el_todel)
 	{
 		block = tet->blocks[i];
 		map->map[cords[0] + block.y][cords[1] + block.x] = 0;
-		i++;
+		++i;
 	}
 	return (1);
 }
@@ -106,7 +106,7 @@ int			is_available(t_map *map)
 	{
 		if (map->t_pcs[i]->used == 0)
 			return (1);
-		i++;
+		++i;
 	}
 	return (0);
 }
@@ -127,21 +127,23 @@ int			ft_solve(t_map *map, int **tab, int sz)
 		{
 			cords[0] = x / sz;
 			cords[1] = x % sz;
-			if (can_place(map->t_pcs[i], map, cords, i + 1) == 1)
+			if (tab[cords[0]][cords[1]] == 0)
 			{
-				map->t_pcs[i]->used = 1;
-				show_tab(map, sz, map->map);
-				if (ft_solve(map, tab, sz) == 1)
-					return (1);
-				else
+				if (can_place(map->t_pcs[i], map, cords, i + 1) == 1)
 				{
-					remove_bl(map->t_pcs[i], map, cords, 4);
-					map->t_pcs[i]->used = 0;
+					map->t_pcs[i]->used = 1;
+					if (ft_solve(map, tab, sz) == 1)
+						return (1);
+					else
+					{
+						remove_bl(map->t_pcs[i], map, cords, 4);
+						map->t_pcs[i]->used = 0;
+					}
 				}
 			}
-			x++;
+			++x;
 		}
-		i++;
+		++i;
 	}
 	return (0);
 }
@@ -158,15 +160,14 @@ int         ft_resolve(t_map *map)
 	{
 		if	(!(tab = create_array(size)))
 			return (-1);
-		printf("Size: %d\n", size);
 		map->sz = size;
 		map->map = tab;
 		result = ft_solve(map, tab, size);
 		if (result == 0)
-			size++;
+			++size;
 		if (tab)
 			free(tab);
 	}
-	show_tab(map, size, tab);
+	show_tab(size, tab);
     return (1);
 }
