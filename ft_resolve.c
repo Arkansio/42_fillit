@@ -6,50 +6,11 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 23:48:36 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/30 23:06:29 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 23:43:15 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-
-static int         **create_array(int sz)
-{
-	int     i;
-	int		**tab;
-	int		j;
-
-	i = 0;
-	if (!(tab = (int**)malloc(sizeof(int*) * sz)))
-		return (NULL);
-	while (i < sz)
-	{
-		if (!(tab[i] = (int*)malloc(sizeof(int) * sz)))
-			return (NULL);
-		j = 0;
-		while (j < sz)
-			tab[i][j++] = 0;
-		i++;
-	}
-	return (tab);
-}
-
-void		show_tab(int size, int **tab)
-{
-		int		i = 0;
- //   printf("nb blocks: %d\n", map->nb_pcs);
- //   printf("%d\n", size);
-	while (i < size * size)
-	{
-		if (tab[i / size][i % size] == 0)
-			ft_putchar('.');
-		else
-			ft_putchar('A' + tab[i / size][i % size] - 1);
-		i++;
-		if (i % size == 0)
-			ft_putchar('\n');
-	}
-}
 
 int			remove_bl(t_tetris *tet, t_map *map, int cords[2], int el_todel)
 {
@@ -158,7 +119,7 @@ int         ft_resolve(t_map *map)
 	result = 0;
 	while (result != 1)
 	{
-		if	(!(tab = create_array(size)))
+		if	(!(tab = ft_create_array(size)))
 			return (-1);
 		map->sz = size;
 		map->map = tab;
@@ -168,6 +129,6 @@ int         ft_resolve(t_map *map)
 		if (tab)
 			free(tab);
 	}
-	show_tab(size, tab);
+	ft_show_tab(size, tab);
     return (1);
 }

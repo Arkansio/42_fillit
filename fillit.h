@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/30 00:58:35 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 23:43:22 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ typedef struct  s_map
 	int			sz;
 }               t_map;
 
+int			**ft_create_array(int sz);
+void		ft_show_tab(int size, int **tab);
 int			ft_perfect_square(int nb);
 int			ft_resolve(t_map *map);
 int			ft_load_blocks(t_tetris *tet, int tab[4][4]);
