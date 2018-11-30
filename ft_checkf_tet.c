@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 23:11:54 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/30 18:53:16 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 23:33:05 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	check_line(char *str)
 {
-	int 	i;
+	int		i;
 	int		block;
 
 	block = 0;
@@ -68,12 +68,11 @@ int			ft_checkf_tet(char *str, t_map *map)
 	i = 0;
 	while (i < sz)
 	{
-		if(check_tetri(&str[i]) == -1)
+		if (check_tetri(&str[i]) == -1)
 			return (-1);
 		pcs++;
 		i += 21;
 	}
 	map->nb_pcs = pcs;
-//	printf("pcs: %d\n", pcs);
 	return (1);
 }

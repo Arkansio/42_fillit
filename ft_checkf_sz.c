@@ -6,16 +6,16 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 21:18:57 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/24 00:19:30 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 23:14:37 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int      check_size(char *str)
+static int		check_size(char *str)
 {
-	int     i;
-	int     sz;
+	int		i;
+	int		sz;
 
 	sz = ft_strlen(str);
 	i = 1;
@@ -44,7 +44,7 @@ static int		check_size2(char *str)
 	return (-1);
 }
 
-int		ft_checkf_sz(char *str)
+int				ft_checkf_sz(char *str)
 {
 	if (check_size(str) == -1)
 	{

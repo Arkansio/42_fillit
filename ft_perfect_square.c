@@ -6,13 +6,13 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 23:50:51 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/30 22:40:11 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 23:30:19 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_perfect_square(int nb)
+int		ft_perfect_square(int nb)
 {
-	float c;
+	float	c;
 
 	c = 0.f;
 	while (c * c < nb)

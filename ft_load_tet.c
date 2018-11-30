@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 21:25:15 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/29 22:43:37 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/11/30 23:21:33 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static t_tetris		*get_tet(char *str)
 
 	if (!(tet = (t_tetris*)malloc(sizeof(t_tetris))))
 		return (NULL);
-	if(!(ft_load_tetmap(str, map)))
+	if (!(ft_load_tetmap(str, map)))
 		return (NULL);
 	ft_load_blocks(tet, map);
 	return (tet);
@@ -27,14 +27,14 @@ static t_tetris		*get_tet(char *str)
 
 int					ft_load_tet(char *str, t_map *map)
 {
-	int     i;
+	int		i;
 
 	i = 0;
 	if (!(map->t_pcs = (t_tetris**)malloc(sizeof(t_tetris*) * map->nb_pcs)))
 		return (-1);
 	while (i < map->nb_pcs)
 	{
-		if(!(map->t_pcs[i] = get_tet(&str[i * 21])))
+		if (!(map->t_pcs[i] = get_tet(&str[i * 21])))
 			return (-1);
 		map->t_pcs[i]->used = 0;
 		i++;
