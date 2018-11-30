@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/30 23:43:22 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/01 00:03:57 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,25 @@ typedef struct	s_tetris
 	int			used;
 }				t_tetris;
 
-typedef struct  s_map
+typedef struct	s_map
 {
-	int         **map;
-	t_tetris    **t_pcs;
+	int			**map;
+	t_tetris	**t_pcs;
 	int			nb_pcs;
 	int			sz;
-}               t_map;
+}				t_map;
 
-int			**ft_create_array(int sz);
-void		ft_show_tab(int size, int **tab);
-int			ft_perfect_square(int nb);
-int			ft_resolve(t_map *map);
-int			ft_load_blocks(t_tetris *tet, int tab[4][4]);
-int			ft_load_tetmap(char *str, int map[4][4]);
-int			ft_load_tet(char *str, t_map *map);
-int			ft_checkf_tside(char *str);
-int			ft_checkf_tet(char *str, t_map *map);
-int			ft_checkf_sz(char *str);
-char		*ft_loadf(const char *file);
-t_map       *parse_map(char *file);
+int				**ft_create_array(int sz);
+void			ft_show_tab(int size, int **tab);
+int				ft_perfect_square(int nb);
+int				ft_resolve(t_map *map);
+int				ft_load_blocks(t_tetris *tet, int tab[4][4]);
+int				ft_load_tetmap(char *str, int map[4][4]);
+int				ft_load_tet(char *str, t_map *map);
+int				ft_checkf_tside(char *str);
+int				ft_checkf_tet(char *str, t_map *map);
+int				ft_checkf_sz(char *str);
+char			*ft_loadf(const char *file);
+t_map			*parse_map(char *file);
 
 #endif
