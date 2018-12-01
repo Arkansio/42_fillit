@@ -77,24 +77,23 @@ int				ft_solve(t_map *map, int **tab, int sz, int i)
 	int		x;
 	int		cords[2];
 
-	i = -1;
+	i = 0;
 	if (is_available(map) == 0)
 		return (1);
-	while (++i < map->nb_pcs)
+	while (map->t_pcs[i]->used == 1)
+		i++;
+	x = -1;
+	while (++x < sz * sz && map->t_pcs[i]->used == 0)
 	{
-		x = -1;
-		while (++x < sz * sz && map->t_pcs[i]->used == 0)
+		cords[0] = x / sz;
+		cords[1] = x % sz;
+		if (can_place(map->t_pcs[i], map, cords, i + 1) == 1)
 		{
-			cords[0] = x / sz;
-			cords[1] = x % sz;
-			if (can_place(map->t_pcs[i], map, cords, i + 1) == 1)
-			{
-				map->t_pcs[i]->used = 1;
-				if (ft_solve(map, tab, sz, 0) == 1)
-					return (1);
-				remove_bl(map->t_pcs[i], map, cords, 4);
-				map->t_pcs[i]->used = 0;
-			}
+			map->t_pcs[i]->used = 1;
+			if (ft_solve(map, tab, sz, 0) == 1)
+				return (1);
+			remove_bl(map->t_pcs[i], map, cords, 4);
+			map->t_pcs[i]->used = 0;
 		}
 	}
 	return (0);
