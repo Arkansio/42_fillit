@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/01 00:03:57 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/01 02:29:11 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
-
-# include <stdio.h>
-# include <time.h>
 
 typedef	struct	s_block
 {
