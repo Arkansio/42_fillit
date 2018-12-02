@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 15:46:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/02 19:59:48 by mgessa           ###   ########.fr       */
+/*   Created: 2018/12/02 19:56:15 by mgessa            #+#    #+#             */
+/*   Updated: 2018/12/02 20:44:03 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static void		ft_init(char *file)
+void			free_map(t_map *map)
 {
-	t_map	*map;
+	int		i;
 
-	map = NULL;
-	if (!(map = parse_map(file)))
-	{
-		ft_putstr_fd("error\n", 1);
+	i = 0;
+	if (!map)
 		return ;
+	while (i < map->nb_pcs && map->t_pcs != NULL)
+	{
+		if (map->t_pcs[i] != 0)
+		{
+			free(map->t_pcs[i]);
+			map->t_pcs[i] = NULL;
+		}
+		++i;
 	}
-	ft_resolve(map);
-	free_map(map);
-}
-
-int				main(int argc, char **argv)
-{
-	if (argc == 2)
-		ft_init(argv[1]);
-	else
-		ft_putstr_fd("Usage: <file>\n", 1);
+	if (map->t_pcs)
+		free(map->t_pcs);
+	free_int_tab(map->map, map->sz);
+	free(map);
 }

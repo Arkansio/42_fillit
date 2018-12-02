@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/01 02:29:11 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/02 20:01:48 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct	s_map
 	int			sz;
 }				t_map;
 
+void			free_int_tab(int **tab, int sz);
+void			free_map(t_map *map);
 int				**ft_create_array(int sz);
 void			ft_show_tab(int size, int **tab);
 int				ft_perfect_square(int nb);

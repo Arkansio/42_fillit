@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/02 18:46:00 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/02 20:02:01 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SRCS = main.c \
 	   ft_resolve.c \
 	   ft_perfect_square.c \
 	   ft_show_tab.c \
-	   ft_create_array.c
+	   ft_create_array.c \
+	   free_map.c \
+	   free_int_map.c
 
 FLAGS = -Wall \
 		-Werror \
