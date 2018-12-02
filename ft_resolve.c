@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 23:48:36 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/02 20:23:33 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/02 23:32:12 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,6 @@ int				ft_resolve(t_map *map)
 			++size;
 	}
 	ft_show_tab(size, tab);
+	free_int_tab(tab, size);
 	return (1);
 }

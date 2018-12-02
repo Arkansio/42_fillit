@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:46:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/02 22:51:37 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/02 23:37:15 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void		ft_init(char *file)
 	map = NULL;
 	if (!(map = parse_map(file)))
 	{
-		ft_putstr_fd("error\n", 2);
+		ft_putstr_fd("error\n", OUTERROR);
 		return ;
 	}
 	ft_resolve(map);
