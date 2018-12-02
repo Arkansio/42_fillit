@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:57:06 by mgessa            #+#    #+#             */
-/*   Updated: 2018/11/30 18:52:19 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/03 00:23:12 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ char			*ft_loadf(const char *file)
 	}
 	if (check_ex(ret, str) == 0)
 		return (NULL);
+	close(fd);
 	return (str);
 }
