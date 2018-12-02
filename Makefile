@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/11/30 23:42:53 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/02 18:46:00 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,15 +34,10 @@ OBJS = $(SRCS:.c=.o)
 
 HEADER = ./
 
-all: libft $(NAME)
-
-libft:
-	(cd libft; make all)
-
-re-libft:
-	cd libft && make re
+all: $(NAME)
 
 $(NAME): $(OBJS)
+	make -C libft
 	gcc $(FLAGS) -o $(NAME) $^ -L. libft/libft.a
 
 ./%.o: ./%.c
@@ -50,12 +45,12 @@ $(NAME): $(OBJS)
 
 clean:
 	/bin/rm -f $(OBJS)
-	cd libft && make clean
+	make -C libft clean
 
 fclean: clean
 	/bin/rm -f $(NAME)
-	cd libft && make fclean
+	make -C libft fclean
 
-re: fclean re-libft all
+re: fclean all
 
 .PHONY: all clean re fclean libft
