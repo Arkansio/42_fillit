@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:47:12 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/02 23:38:07 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/03 00:08:59 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-# define OUTERROR 2
+# define OUTERROR 1
 
 typedef	struct	s_block
 {
