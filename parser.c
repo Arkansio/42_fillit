@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 20:11:54 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/02 20:48:11 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/02 22:14:10 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_map				*parse_map(char *file)
 		return (NULL);
 	if (load_tetriminos(map, file) == -1)
 	{
+		free_map(map);
 		return (NULL);
 	}
 	return (map);

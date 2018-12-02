@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 20:01:17 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/02 20:13:37 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/02 22:16:09 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void		free_int_tab(int **tab, int sz)
 	{
 		if (tab[i] != NULL)
 			free(tab[i]);
+		else
+			return ;
 		i++;
 	}
 	free(tab);

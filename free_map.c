@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 19:56:15 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/02 20:44:03 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/02 22:17:29 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void			free_map(t_map *map)
 		}
 		++i;
 	}
+	if (i == 0)
+		return ;
 	if (map->t_pcs)
 		free(map->t_pcs);
 	free_int_tab(map->map, map->sz);
